@@ -21,29 +21,25 @@ from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-You can find my list of available commands with /help.
-
-[Saitama's Repo](github.com/AnimeKaizoku/SaitamaRobot) 
-See [Basic Configuration Checklist](t.me/OnePunchUpdates/29) on how to secure your group.
-The support group chat is at {}.
+Hola {}, mi nombre es {}! 
+Soy un bot de gestión de grupo con tematica de Anime.
+Puede encontrar mi lista de comandos disponibles con /help.
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
-the things I can help you with.
 
-*Main* commands available:
- • /start: start the bot
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /donate: information about how to donate!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
+¡Hola! Mi nombre es *{}*.
+¡Soy una amante a las explosiones y ayudo a los administradores a administrar sus grupos con Explosion! Echa un vistazo a lo siguiente para una idea de algunos de los
+las cosas con las que puedo ayudarte.
 
+*Principales* comandos disponibles:
+ • /start: inicie el bot
+ • /help: PM es usted este mensaje.
+ • /help <nombre del módulo>: PM es la información sobre ese módulo.
+ • /donar: información sobre cómo donar!
+ • /ajustes:
+ • En PM: le enviará la configuración de todos los módulos compatibles.
+ • En un grupo: te redirigirá a pm, con todos los ajustes de ese chat.
 
 {}
 And the following:
@@ -51,12 +47,12 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/4645f09a45e70298624d7.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-Saitama is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """Heya, me alegra oír que quieres donar!
+Puedes hablar con @NachABR.
+Tambien puedes donar al escritor original del código Base, Paul
+Hay dos maneras de apoyarlo; [PayPal](paypal.me/PaulSonOfLars), o [Monzo](monzo.me/paulnionvestergaardlarsen)."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -160,12 +156,12 @@ def start(update: Update, context: CallbackContext):
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
-                        text="Add Saitama to your group",
+                        text="Añade a Megu a tu grupo",
                         url="t.me/{}?startgroup=true".format(
                             context.bot.username))
                 ]]))
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("Hola, gracias por añadirme al grupo :3")
 
 
 # for test purposes
